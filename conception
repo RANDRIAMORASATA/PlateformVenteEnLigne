@@ -1,0 +1,96 @@
+entités:
+Users
+Products
+Orders
+OrderDetails
+ProductCategories
+Payments
+ShippingAddresses
+
+--------------------------
+
+Les attributs des entités:
+------------
+Users
+
+id (Primary Key)
+name
+email
+password
+address
+tel
+registration_date
+---------------
+Products
+
+id (Primary Key)
+name
+description
+price
+stock
+category_id (Foreign Key)
+-----------------
+ProductCategories
+
+id (Primary Key)
+name
+------------------------
+Orders
+
+id (Primary Key)
+user_id (Foreign Key)
+order_date
+status
+total
+----------------------
+OrderDetails
+
+id (Primary Key)
+orderId (Foreign Key)
+product_id (Foreign Key)
+quantity
+price
+---------------------
+Payments
+
+id (Primary Key)
+order_id (Foreign Key)
+amount
+payment_date
+payment_method
+----------------------
+ShippingAddresses
+
+id (Primary Key)
+user_id (Foreign Key)
+address
+city
+postal_code
+country
+
+3. Concevoir les Relations entre les Entités
+--------------------
+Un utilisateur peut passer plusieurs commandes.
+USER ONE TO MANY ORDER (OneToMany)
+ONE ORDER TO ONE USER (ManyToOne)
+--------------------
+
+Une commande peut avoir plusieurs détails de commande.
+ORDER ONE TO MANY ORDERDETAIL (OneToMany)
+ORDERDETAIL ONE TO ONE ORDER (ManyToOne)
+-------------------
+
+Un produit peut appartenir à une seule catégorie, 
+PRODUCT ONE TO ONE CATEGORY (ManyToOne)
+CATEGORY ONE TO MANY PRODUCT (OneToMany)
+mais une catégorie peut contenir plusieurs produits.
+--------------------
+
+Une commande peut avoir un paiement associé.
+ORDER ONE TO ONE PAYMENT (OneToOne)
+PAYMENT ONE TO ONE ORDER (OneToOne)
+----------------
+
+Un utilisateur peut avoir plusieurs adresses de livraison.
+USER ONE TO MANY ADRESS (OneToMany)
+ADRESS ONE TO ONE USER (ManyToOne)

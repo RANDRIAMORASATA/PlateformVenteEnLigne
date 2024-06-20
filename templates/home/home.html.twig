@@ -1,0 +1,50 @@
+{% extends "base.html.twig" %} 
+
+{% block home %} 
+{% set base_url = app.request.schemeAndHttpHost %}
+<div>
+    {% if success_message %}
+    <div class="alert alert-success mt-4 d-flex justify-content-center" style="z-index: -1;">
+      {{ success_message }}
+    </div>
+    {% endif %} 
+
+    {% if error_message %}
+        <div class="alert alert-danger mt-4 d-flex justify-content-center" style="z-index: -1;">
+            {{ error_message }}
+        </div>
+    {% endif %}
+    <div class="row">
+        
+            <div class="col-6 mb-4" style="z-index:-1;">
+                <img src="{{ base_url }}/assets/images/ecommerce-3021581_1280.jpg" alt="Image1" class="w-100 ">
+            </div>
+            <div class="col-6 mt-4 text-center d-flex flex-column justify-content-center align-items-center pr-3">
+                <p class="art-degrade">WELCOME
+                    sur AMI-SHOP !
+                </p>
+                <p class="art-spacing font-italic" style="font-style: italic;">" Votre Marketplace, qui est spécialement créé pour vous. "</p>   
+            </div>  
+
+    </div>
+
+    
+    <div class="row" >
+     
+      <div class="col-6 text-center d-flex flex-column justify-content-center align-items-center pr-3">
+        <h1 class="art-spacing text-uppercase">Nos bureau se situe:</h1>
+        <ul class="list-group list-group-flush gap-3" style="z-index:-1;">
+          <li class="list-group-item d-flex justify-content-start">Madagascar Tomboarivo.</li>
+          <li class="list-group-item d-flex justify-content-start">PRES 02 B27 Rue LALALA.</li>
+        </ul>   
+      </div>  
+      <div class="col-6">
+        <img src="{{ base_url }}/assets/images/map.png" alt="Image1" class="w-100">
+      </div>
+    
+        
+    </div>
+    
+  </div>
+     
+{% endblock %}

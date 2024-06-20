@@ -1,0 +1,36 @@
+
+ONE USER TO ONE ADDRESS 
+ONE ADDRESS TO ONE USER
+
+OneToOne
+
+------------------------
+
+ONE USER TO MANY ARTICLE
+ONE ARTICLE TO ONE USER
+
+OneToMany
+ManyToOne
+
+--------------------------------
+
+ONE CATEGORY TO MANY ARTICLE 
+ONE ARTICLE TO MANY CATEGORY
+
+ManyToMany
+
+
+-------------------------------
+
+ONE COMMENT TO ONE ARTICLE
+ONE ARTICLE TO MANY COMMENT
+
+OneToMany
+
+--------------------------------
+
+ONE USER TO MANY COMMENT
+ONE COMMENT TO ONE USER
+
+ManyToOne
+

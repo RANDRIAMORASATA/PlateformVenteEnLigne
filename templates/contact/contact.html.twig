@@ -1,0 +1,59 @@
+{% extends "base.html.twig" %} 
+{% block  body %}
+<div class="row py-3" >
+    <h1 class="art-spacing text-uppercase">AMi-SHOP, votre boutique en ligne, contactez nous !</h1>
+    <div class="col-6 text-center d-flex flex-column justify-content-center align-items-center pr-3">
+      
+      <ul class="list-group list-group-flush gap-3" style="z-index:-1;">
+        <li class="list-group-item d-flex justify-content-start">Pourquoi une Marketplace ? Pour proposer des avantages à nos collaborateurs.</li>
+        <li class="list-group-item d-flex justify-content-start">Notre engagement, contribuer à votre bien-être et votre épanouissement.</li>
+        <li class="list-group-item d-flex justify-content-start">L'avantage ? Des prix spécialement négociés et avec des garenties plus de 6mois.</li>
+        <li class="list-group-item d-flex justify-content-start">Autre avantage ? On livre à votre domicile.</li>
+        <li class="list-group-item d-flex justify-content-start">Quels sont-ils ? Des vetements, des articles pour les bébés, des pièces vélo, des décorations etc...</li>
+        <li class="list-group-item d-flex justify-content-start">AMi-SHOP se développe, très bientôt plus de produits dans votre Marketplace.</li>
+        
+      </ul>   
+    </div>  
+  
+      <div class="col-6">
+        <div style="display: flex;
+        flex-direction: column;
+        justify-content: center; height:100%;">
+
+        <div class="d-flex justify-content-center" >
+            <form action="forms/contact.php" method="post" role="form" class="php-email-form w-100">
+                <div class="row">
+                <div class=" mb-3">
+                    <div class="form-group">
+                    <input type="text" name="name" class="form-control" id="name" placeholder="Votre nom" required>
+                    </div>
+                </div>
+                <div class=" mb-3">
+                    <div class="form-group">
+                    <input type="email" class="form-control" name="email" id="email" placeholder="Votre email" required>
+                    </div>
+                </div>
+                <div class=" mb-3">
+                    <div class="form-group">
+                    <input type="text" class="form-control" name="subject" id="subject" placeholder="L'objet de votre message" required>
+                    </div>
+                </div>
+                <div class="">
+                    <div class="form-group">
+                    <textarea class="form-control" name="message" rows="5" placeholder="Votre message" required></textarea>
+                    </div>
+                </div>
+                            
+                <div class=" text-center mt-4 d-flex  justify-content-center align-items-center ">
+                    <button type="submit" class="btn btn-info text-light m-1" style="">Envoyez</button>
+                    <a href="/products" class="btn btn-outline-info w-50 m-1" >Regardez nos arrivages</a>
+                </div>
+                </div>
+            </form>
+        </div>
+    </div>
+      </div>
+</div>
+   
+    
+  {% endblock %}

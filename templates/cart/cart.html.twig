@@ -1,0 +1,36 @@
+{% extends "base.html.twig" %}
+
+{% block body %}
+<div class="container">
+    <h1>Votre Panier</h1>
+    {% if cartItems is empty %}
+        <p>Votre panier est vide.</p>
+    {% else %}
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Nom</th>
+                    <th>Description</th>
+                    <th>Quantité</th>
+                    <th>Prix Unitaire</th>
+                    <th>Total</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for cart in cartItems %}
+                    <tr>
+                        <td>{{ cart.name }}</td>
+                        <td>{{ cart.description }}</td>
+                        <td>{{ cart.quantity }}</td>
+                        <td>{{ cart.price }} €</td>
+                        <td>{{ cart.quantity * cart.price }} €</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <div class="text-end">
+            <a href="/payment" class="btn btn-primary">Paiment</a>
+        </div>
+    {% endif %}
+</div>
+{% endblock %}

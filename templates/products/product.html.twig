@@ -1,0 +1,37 @@
+{% extends "base.html.twig" %}
+{% block body %}
+<div class="d-flex align-items-center justify-content-center mt-4">
+  {% if success_message_cart %}
+    <div class="alert alert-success mt-4 d-flex justify-content-center align-items-center" style="z-index: -1;">
+      {{ success_message_cart }}
+    </div>
+    {% endif %}
+<div class="d-flex flex-wrap gap-4 justify-content-center mt-4">
+    
+  {% set base_url = app.request.schemeAndHttpHost %}
+    {%for product in products %}
+
+        <div class="card col-md-6 col-lg-4  roundedshadow-lg category p-2" style="width: 18rem; z-index:-1;">
+          <div class="card-img-top img-product" style="background-image: url('{{  base_url }}/{{ product.imageUrl }}');"></div>
+            <div class="card-body d-flex flex-column justify-content-center">
+              <h5 class="card-title text-center" style="font-size:1.5rem; font-weight:bold;">{{ product.name }}</h5>
+              <p class="card-text text-center">{{ product.description }}</p>
+              {% if is_logged_in %}
+                <form action="/add-to-cart/{{product.id}}" method="post" class="d-flex justify-content-center align-item-end">
+                  <input type="hidden" name="product_id" value="{{ product.id }}">
+                  <button type="submit" class="btn btn-outline-info">Ajouter au panier</button>
+                </form>
+              {% endif %}
+            </div>
+          </div>
+          
+
+    {%endfor%}
+    
+</div>
+{% if cartItems | length > 0 %}
+  <div class="d-flex w-100 justify-content-center"><a class="btn btn-outline-info mt-4 w-50" href="/cart">Valider les commandes</a></div>
+{% endif %}
+</div>
+
+{% endblock %}
